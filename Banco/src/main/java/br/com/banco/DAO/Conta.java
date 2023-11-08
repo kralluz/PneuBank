@@ -1,24 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.com.banco.DAO;
 
 import java.io.IOException;
 import java.util.Scanner;
 
-/**
- *
- * @author alexandre
- */
 public class Conta {
 
     protected int numero;
     protected Cliente cliente;
     protected double saldo;
     protected String senha;
+    
 
     public Conta(int numero, Cliente cliente, double saldo, String senha) {
+        
         this.numero = numero;
         this.cliente = cliente;
         this.saldo = saldo;
@@ -62,8 +56,13 @@ public class Conta {
     public double getSaldo() {
         return saldo;
     }
-    
-  
+
+    public void exibirConta() {
+        System.out.printf(" ╔═══════════════════════════════╗ Conta criada com sucesso! ╔═══════════════════════════════╗\n");
+        System.out.println(" ║    numero da conta: " + this.numero);
+        System.out.println(" ║    Saldo: " + this.saldo);
+        System.out.printf(" ╚═══════════════════════════════════════════════════════════════════════════════════════════╝\n");
+    }
 }
 
 

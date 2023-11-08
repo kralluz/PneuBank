@@ -23,31 +23,29 @@ public class ContaCorrente extends Conta {
 
     @Override
     public boolean saque(double valor) {
-        if((this.saldo + this.limite) >= valor){
+        if((this.saldo - valor) > (0 - this.limite)){
             this.saldo -= valor;
             return true;
         }   
-            return true;
+            return false;
     }
     
-    public boolean transferir(double valor, Conta conta){
-        if(this.saldo >= valor){
+    public boolean transferir(double valor, Conta contaDestino){
+        if((this.saldo - valor) > (0 - this.limite)){
             this.saque(valor);
-            conta.deposito(valor);
+            contaDestino.deposito(valor);
             return true;
         }
         return false;
     }
+
+    @Override
     public void exibirConta(){
         System.out.printf(" ╔═══════════════════════════════╗ Conta criada com sucesso! ╔═══════════════════════════════╗\n");
         System.out.println(      " ║    numero da conta: " + getNumero() );
         System.out.println(      " ║    Saldo: " + getSaldo() );
         System.out.println(      " ║    Limite: " + getLimite() );
-        
         System.out.printf(" ╚═══════════════════════════════════════════════════════════════════════════════════════════╝\n");
     }
-    
-    
-
 }
 

@@ -19,12 +19,4 @@ public class ContaPoupanca extends Conta {
         }
         return false;
     }
-
-    public void exibirConta() {
-        System.out.printf(" ╔═══════════════════════════════╗ Conta criada com sucesso! ╔═══════════════════════════════╗\n");
-        System.out.println(" ║    numero da conta: " + this.numero);
-        System.out.println(" ║    Saldo: " + this.saldo);
-        System.out.printf(" ╚═══════════════════════════════════════════════════════════════════════════════════════════╝\n");
-    }
-
 }
